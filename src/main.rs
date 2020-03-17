@@ -70,7 +70,7 @@ fn disassemble_bytes<W: Write>(
                 disasm,
                 x.as_mut_ptr(),
                 x.len() as u64,
-                pc,
+                pc as u64,
                 sbuf.as_mut_ptr() as *mut i8,
                 sbuf.len(),
             )
