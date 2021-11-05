@@ -24,8 +24,8 @@ fn main() -> IoResult<()> {
         LLVMCreateDisasmCPUFeatures(
             c_str!("aarch64"),
             c_str!("generic"),
-            c_str!("+v8.3a"),
-            // c_str!("+v8.5a"),
+            // c_str!("+v8.3a"),
+            c_str!("+v8.5a+memtag"),
             ptr::null_mut(),
             0,
             None,
@@ -54,7 +54,7 @@ fn main() -> IoResult<()> {
     r
 }
 
-const PC_BASE_ADDR: u64 = 0x180333e50;
+const PC_BASE_ADDR: u64 = 0x100007e58;
 
 fn disassemble_bytes<W: Write>(
     mut x: &mut [u8],
